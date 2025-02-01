@@ -25,8 +25,9 @@ avatarInput.addEventListener("change", (event) => {
   }
 });
 
-avatarBox.addEventListener("click", () => {
+avatarBox.addEventListener("click", (e) => {
   avatarInput.click();
+  e.stopPropagation();
 });
 
 imageUpload.addEventListener("click", () => {
@@ -37,7 +38,6 @@ removeImg.addEventListener("click", () => {
   displayImg.src = "./asset/images/icon-upload.svg";
   displayBtnChanges.style.display = "none";
   imgDescr.style.display = "block";
-  avatarInput.style.display = "block";
 });
 
 // form validation.

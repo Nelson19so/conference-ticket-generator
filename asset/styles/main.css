@@ -200,6 +200,7 @@ body {
 .container-form .container-form- .container- form .img-info img {
   margin-right: 4px;
   opacity: 0.5;
+  float: left;
 }
 
 .container-input-form {
@@ -217,7 +218,7 @@ body {
   width: 90%;
   background-color: hsl(245, 19%, 35%, 0.2);
   border: 1px solid var(--muted-color);
-  padding: 10px 20px;
+  padding: 10px 14px;
   color: var(--muted-color);
   border-radius: 10px;
   transition: 0.6s;
@@ -300,6 +301,10 @@ body {
 
   .container-form .container-form- .container- {
     width: 320px;
+  }
+
+  .container-form .container-form- .container- form .img-info {
+    font-size: 12px;
   }
 }
 
