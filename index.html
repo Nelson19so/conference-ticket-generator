@@ -27,12 +27,23 @@
             <div class="container-">
               <form action="" id="submit-form">
                 <div class="container-input-form-photos">
-                  <div class="avatar" id="avatar">
+                  <input type="file" class="avatar-" id="avatar" />
+                  <div class="avatar">
                     <div class="container-img">
-                      <img src="./asset/images/icon-upload.svg" alt="" />
+                      <img
+                        src="./asset/images/icon-upload.svg"
+                        alt="selcted-img"
+                        width="70"
+                        id="img-user"
+                        accept="image/*"
+                      />
                     </div>
-                    <div class="container-text">
+                    <div class="container-text" id="descr">
                       Drag and Drop or Click to Upload
+                    </div>
+                    <div class="button-display" id="display-btn">
+                      <a id="Remove-img">Remove Image</a
+                      ><a id="image-upload">Change Image</a>
                     </div>
                   </div>
 

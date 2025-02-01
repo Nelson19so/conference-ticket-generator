@@ -11,6 +11,7 @@
 
   --muted-color: hsl(245, 15%, 58%);
   --muted-color-darker: hsl(245, 19%, 35%);
+  --muted-color-darker-transparent: hsl(245, 19%, 35%, 0.5);
 
   --dark-color: hsl(248, 70%, 10%);
 
@@ -41,7 +42,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
-  padding-bottom: 5%;
+  padding-bottom: 8%;
 }
 
 .container-form .top-container {
@@ -57,7 +58,7 @@ body {
 
 .container-form .top-container h2 {
   color: var(--light-color);
-  font-weight: 00;
+  font-weight: 600;
 }
 
 .container-form .container-main-text {
@@ -91,6 +92,7 @@ body {
   width: 400px;
   text-align: left;
   margin-top: 1%;
+  position: relative;
 }
 
 .container-form
@@ -114,6 +116,40 @@ body {
   background-color: hsl(245, 19%, 35%, 0.2);
   padding: 30px 0;
   cursor: pointer;
+  transition: 0.6s;
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar:hover {
+  background-color: var(--muted-color-darker-transparent);
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar- {
+  width: 100%;
+  padding: 45px 0;
+  background-color: blue;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar-:hover
+  ~ .avatar {
+  background-color: var(--muted-color-darker-transparent);
 }
 
 .container-form
@@ -128,6 +164,45 @@ body {
   width: 100%;
   text-align: center;
   color: var(--muted-color);
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar
+  .button-display {
+  display: flex;
+  justify-content: center;
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar
+  .button-display
+  a {
+  background-color: var(--muted-color-darker);
+  color: var(--light-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar
+  .container-text,
+.container-img img {
+  border-radius: 10px;
 }
 
 .container-form .container-form- .container- form .img-info {
@@ -160,6 +235,11 @@ body {
   padding: 10px 20px;
   color: var(--muted-color);
   border-radius: 10px;
+  transition: 0.6s;
+}
+
+.container-input-form input:hover {
+  background-color: var(--muted-color-darker-transparent);
 }
 
 .container-input-form button {
@@ -171,6 +251,11 @@ body {
   margin-top: 1.5%;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.6s;
+}
+
+.container-input-form button:hover {
+  background-color: var(--primary-color-2);
 }
 
 .container-input-form .username-error,
@@ -229,7 +314,7 @@ body {
   }
 
   .container-form .container-form- .container- {
-    width: 360px;
+    width: 320px;
   }
 }
 
