@@ -4,6 +4,7 @@ const imgDescr = document.getElementById("descr");
 const displayBtnChanges = document.getElementById("display-btn");
 const removeImg = document.getElementById("Remove-img");
 const imageUpload = document.getElementById("image-upload");
+const avatarBox = document.getElementById("container-avatar");
 
 displayBtnChanges.style.display = "none";
 
@@ -22,6 +23,10 @@ avatarInput.addEventListener("change", (event) => {
     displayBtnChanges.style.display = "flex";
     displayBtnChanges.style.justifyContent = "center";
   }
+});
+
+avatarBox.addEventListener("click", () => {
+  avatarInput.click();
 });
 
 imageUpload.addEventListener("click", () => {

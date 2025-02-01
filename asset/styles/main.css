@@ -134,21 +134,7 @@ body {
   form
   .container-input-form-photos
   .avatar- {
-  width: 100%;
-  padding: 45px 0;
-  opacity: 0;
-  cursor: pointer;
-  position: absolute;
-}
-
-.container-form
-  .container-form-
-  .container-
-  form
-  .container-input-form-photos
-  .avatar-:hover
-  ~ .avatar {
-  background-color: var(--muted-color-darker-transparent);
+  display: none;
 }
 
 .container-form
