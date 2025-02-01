@@ -136,7 +136,6 @@ body {
   .avatar- {
   width: 100%;
   padding: 45px 0;
-  background-color: blue;
   opacity: 0;
   cursor: pointer;
   position: absolute;
@@ -314,7 +313,7 @@ body {
   }
 
   .container-form .container-form- .container- {
-    width: 320px;
+    width: 280px;
   }
 }
 

@@ -32,6 +32,7 @@ removeImg.addEventListener("click", () => {
   displayImg.src = "./asset/images/icon-upload.svg";
   displayBtnChanges.style.display = "none";
   imgDescr.style.display = "block";
+  avatarInput.style.display = "block";
 });
 
 // form validation.
