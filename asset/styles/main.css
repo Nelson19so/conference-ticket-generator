@@ -1,0 +1,236 @@
+/* Color configuration.  */
+
+@font-face {
+  font-family: "Regular";
+  src: url("../fonts/static/Inconsolata-Regular.ttf");
+}
+
+:root {
+  --light-color: hsl(0, 0%, 100%);
+  --white-daker: hsl(252, 6%, 83%);
+
+  --muted-color: hsl(245, 15%, 58%);
+  --muted-color-darker: hsl(245, 19%, 35%);
+
+  --dark-color: hsl(248, 70%, 10%);
+
+  --primary-color: hsl(7, 88%, 67%);
+  --primary-color-2: hsl(7, 71%, 60%);
+
+  --primary-color-ligher-: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+/* ----------------------------------------------------------------- */
+
+/* Base styling */
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Regular";
+}
+
+/* ------------------------------------------------------------------- */
+
+/* Form styling */
+
+.container-form {
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px;
+  background-image: url("../images/background-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  padding-bottom: 5%;
+}
+
+.container-form .top-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.container-form .top-container img {
+  margin-right: 1%;
+}
+
+.container-form .top-container h2 {
+  color: var(--light-color);
+  font-weight: 00;
+}
+
+.container-form .container-main-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -17px;
+}
+
+.container-form .container-main-text article {
+  width: 50%;
+  text-align: center;
+}
+
+.container-form .container-main-text article h1 {
+  font-size: 45px;
+  color: var(--light-color);
+}
+
+.container-form .container-main-text article p {
+  font-size: 20px;
+  margin-top: -20px;
+  color: var(--muted-color);
+}
+
+.container-form .container-form- {
+  width: 100%;
+}
+
+.container-form .container-form- .container- {
+  width: 400px;
+  text-align: left;
+  margin-top: 1%;
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  label {
+  color: var(--light-color);
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar {
+  border: 2px dashed var(--muted-color-darker);
+  border-radius: 10px;
+  width: 100%;
+  background-color: hsl(245, 19%, 35%, 0.2);
+  padding: 30px 0;
+  cursor: pointer;
+}
+
+.container-form
+  .container-form-
+  .container-
+  form
+  .container-input-form-photos
+  .avatar
+  .container-text,
+.container-img {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--muted-color);
+}
+
+.container-form .container-form- .container- form .img-info {
+  color: var(--muted-color-darker);
+  font-size: 13px;
+  display: flex;
+  justify-content: left;
+}
+
+.container-form .container-form- .container- form .img-info img {
+  margin-right: 4px;
+  opacity: 0.5;
+}
+
+.container-input-form {
+  width: 100%;
+  margin-top: 3%;
+}
+
+.container-input-form label {
+  display: block;
+  color: var(--light-color);
+  margin-bottom: 8px;
+}
+
+.container-input-form input {
+  width: 90%;
+  background-color: hsl(245, 19%, 35%, 0.2);
+  border: 1px solid var(--muted-color);
+  padding: 10px 20px;
+  color: var(--muted-color);
+  border-radius: 10px;
+}
+
+.container-input-form button {
+  background-color: var(--primary-color);
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 1.5%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container-input-form .username-error,
+.email-error,
+.github-error {
+  display: block;
+  margin-top: 1px;
+  color: var(--primary-color);
+  font-size: 13px;
+}
+
+.container-input-form .username-error img,
+.email-error img,
+.github-error img {
+  float: left;
+  margin-right: 5px;
+}
+
+.container-input-form span p {
+  margin-left: 4px;
+}
+
+/* -------------------------------------------------------------------- */
+
+/* Media screen */
+
+@media only screen and (max-width: 768px) {
+  .container-form {
+    background-image: url("../images/background-tablet.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+  }
+
+  .container-form .container-main-text article {
+    width: 70%;
+    text-align: center;
+  }
+
+  .container-form .container-form- .container- {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .container-form {
+    background-image: url("../images/background-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+  }
+
+  .container-form .container-main-text article {
+    width: 100%;
+    text-align: center;
+  }
+
+  .container-form .container-form- .container- {
+    width: 360px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
