@@ -36,13 +36,16 @@ body {
 
 .container-form {
   width: 100%;
-  height: 100%;
-  padding: 20px 10px;
   background-image: url("../images/background-desktop.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
+  position: relative;
+}
+
+.container-form .container-items {
   padding-bottom: 8%;
+  padding: 20px 10px;
 }
 
 .container-form .top-container {
@@ -53,7 +56,7 @@ body {
 }
 
 .container-form .top-container img {
-  margin-right: 1%;
+  margin-right: 15px;
 }
 
 .container-form .top-container h2 {
@@ -113,8 +116,9 @@ body {
   border: 2px dashed var(--muted-color-darker);
   border-radius: 10px;
   width: 100%;
+  width: 100%;
   background-color: hsl(245, 19%, 35%, 0.2);
-  padding: 30px 0;
+  padding: 15px 0;
   cursor: pointer;
   transition: 0.6s;
 }
@@ -215,10 +219,10 @@ body {
 }
 
 .container-input-form input {
-  width: 90%;
+  width: 91%;
   background-color: hsl(245, 19%, 35%, 0.2);
   border: 1px solid var(--muted-color);
-  padding: 10px 14px;
+  padding: 12px 17px;
   color: var(--muted-color);
   border-radius: 10px;
   transition: 0.6s;
@@ -232,7 +236,7 @@ body {
   background-color: var(--primary-color);
   border: none;
   width: 100%;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 10px;
   margin-top: 1.5%;
   font-weight: 600;
@@ -264,6 +268,37 @@ body {
   margin-left: 4px;
 }
 
+.position-abs- {
+  position: absolute;
+  top: 10%;
+  right: 0;
+}
+
+.position-abs-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+}
+
+.position-abs-circle {
+  position: absolute;
+  right: 260px;
+  margin-top: 360px;
+  width: 15%;
+}
+
+.pattern-lines {
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.position-abs-bottom-mb-tb {
+  display: none;
+}
+
 /* -------------------------------------------------------------------- */
 
 /* Media screen */
@@ -284,6 +319,23 @@ body {
   .container-form .container-form- .container- {
     width: 300px;
   }
+
+  .position-abs-bottom-mb-tb {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+  }
+
+  .position-abs-bottom {
+    display: none;
+  }
+
+  .position-abs- {
+    width: 60%;
+    top: 0;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -292,6 +344,15 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
+  }
+
+  .position-abs- {
+    width: 40%;
+    top: 0;
+  }
+
+  .container-form .container-items {
+    padding-bottom: 30%;
   }
 
   .container-form .container-main-text article {
@@ -305,6 +366,10 @@ body {
 
   .container-form .container-form- .container- form .img-info {
     font-size: 12px;
+  }
+
+  .container-form .container-main-text article h1 {
+    font-size: 30px;
   }
 }
 

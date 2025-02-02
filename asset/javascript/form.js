@@ -1,3 +1,9 @@
+// setting if true or false statement when the form is validet, to know ....|
+// when the form is valied in other to generate ticket
+let validetFormImg = false;
+let validetForminput = false;
+
+// avatar validation
 const avatarInput = document.getElementById("avatar");
 const displayImg = document.getElementById("img-user");
 const imgDescr = document.getElementById("descr");
@@ -5,8 +11,10 @@ const displayBtnChanges = document.getElementById("display-btn");
 const removeImg = document.getElementById("Remove-img");
 const imageUpload = document.getElementById("image-upload");
 const avatarBox = document.getElementById("container-avatar");
+const imgError = document.getElementById("img-error");
 
 displayBtnChanges.style.display = "none";
+let buttonAction = true;
 
 avatarInput.addEventListener("change", (event) => {
   if (event.target.files && event.target.files.length > 0) {
@@ -22,12 +30,30 @@ avatarInput.addEventListener("change", (event) => {
     imgDescr.style.display = "none";
     displayBtnChanges.style.display = "flex";
     displayBtnChanges.style.justifyContent = "center";
+    buttonAction = false;
+
+    if (selectfile.size > 500 * 1024) {
+      imgError.textContent =
+        "File too large, please upload a photo under 500kb";
+      imgError.style.color = "#f57261";
+      validetFormImg = false;
+    } else if (!selectfile.type.match("image/jpeg")) {
+      imgError.textContent = "File format must be jpg";
+      imgError.style.color = "#f57261";
+      validetFormImg = false;
+    } else {
+      validetFormImg = true;
+      imgError.textContent = "Upload your photo (JPG or PMG, max size: 500kb)";
+      imgError.style.color = "";
+    }
   }
 });
 
 avatarBox.addEventListener("click", (e) => {
-  avatarInput.click();
-  e.stopPropagation();
+  if (buttonAction) {
+    avatarInput.click();
+    e.stopPropagation();
+  }
 });
 
 imageUpload.addEventListener("click", () => {
@@ -38,9 +64,10 @@ removeImg.addEventListener("click", () => {
   displayImg.src = "./asset/images/icon-upload.svg";
   displayBtnChanges.style.display = "none";
   imgDescr.style.display = "block";
+  buttonAction = true;
 });
 
-// form validation.
+// form validation for input.
 
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -67,11 +94,11 @@ submitForm.addEventListener("submit", (e) => {
   if (usernameValue == "" || usernameValue.length <= minLengh) {
     usernameError.classList.add("username-error");
     usernameError.style.display = "block";
-    username.style.border = "1px solid hsl(7, 88%, 67%)";
+    username.style.border = "1px solid #f57261";
   } else if (emailValue == "") {
     emailError.classList.add("email-error");
     emailError.style.display = "block";
-    email.style.border = "1px solid hsl(7, 88%, 67%)";
+    email.style.border = "1px solid #f57261";
   } else if (githubValue === "") {
     githubError.classList.add("github-error");
     githubError.style.display = "block";
@@ -80,9 +107,16 @@ submitForm.addEventListener("submit", (e) => {
     username.style.border = "";
     email.style.border = "";
     github.style.border = "";
+    validetForminput = true;
     usernameError.style.display = "none";
     emailError.style.display = "none";
     githubError.style.display = "none";
+
+    if (validetFormImg) {
+      if (validetForminput) {
+        alert("ticket was successfully generated");
+      }
+    }
   }
 });
 
