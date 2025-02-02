@@ -336,6 +336,10 @@ body {
     width: 60%;
     top: 0;
   }
+
+  .container-form .top-container {
+    margin-bottom: 4%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
