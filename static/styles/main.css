@@ -18,7 +18,7 @@
   --primary-color: hsl(7, 88%, 67%);
   --primary-color-2: hsl(7, 71%, 60%);
 
-  --primary-color-ligher-: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+  --primary-color-ligher-to-white: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
 }
 /* ----------------------------------------------------------------- */
 
@@ -34,7 +34,8 @@ body {
 
 /* Form styling */
 
-.container-form {
+.container-form,
+.ticket-parent {
   width: 100%;
   background-image: url("../images/background-desktop.png");
   background-size: cover;
@@ -45,7 +46,16 @@ body {
 
 .container-form .container-items {
   padding-bottom: 8%;
-  padding: 20px 10px;
+  padding-top: 3%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ticket-parent .container-items {
+  padding-bottom: 8%;
+  padding-top: 3%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .container-form .top-container {
@@ -74,6 +84,7 @@ body {
 .container-form .container-main-text article {
   width: 50%;
   text-align: center;
+  margin-top: 2%;
 }
 
 .container-form .container-main-text article h1 {
@@ -96,6 +107,7 @@ body {
   text-align: left;
   margin-top: 1%;
   position: relative;
+  margin-top: 2%;
 }
 
 .container-form
@@ -201,6 +213,19 @@ body {
   justify-content: left;
 }
 
+.displayNone {
+  display: flex;
+  justify-content: left;
+}
+
+.displayNone img {
+  float: left;
+}
+
+.displayNone p {
+  color: var(--primary-color);
+}
+
 .container-form .container-form- .container- form .img-info img {
   margin-right: 4px;
   opacity: 0.5;
@@ -301,14 +326,183 @@ body {
 
 /* -------------------------------------------------------------------- */
 
+/* Ticket styling */
+.ticket-parent .container-items .welcome-successful-users {
+  width: 60%;
+}
+
+.ticket-parent .container-items .welcome-successful-users .article-welcome {
+  font-size: 50px;
+  color: var(--light-color);
+}
+
+.ticket-parent .container-items .welcome-successful-users .email-message {
+  font-size: 20px;
+  color: var(--muted-color);
+  width: 50%;
+}
+
+.ticket-parent .container-items .welcome-successful-users .user-ticket-email {
+  color: var(--primary-color);
+}
+
+.ticket-parent
+  .container-items
+  .welcome-successful-users
+  .article-welcome
+  .user-ticket-username {
+  color: var(--primary-color-ligher-to-white);
+}
+
+.ticket-parent .container-items .ticket-cover {
+  margin-top: 8%;
+  position: relative;
+  width: 500px;
+}
+
+.ticket-parent .container-items .ticket-cover .container {
+  width: 81%;
+  height: 100%;
+  float: left;
+}
+
+.ticket-parent .container-items .ticket-cover .container .container-top {
+  width: 100%;
+  height: 50%;
+  top: 0%;
+}
+
+.ticket-parent .container-items .ticket-cover .container .container-bottom {
+  width: 100%;
+  height: 50%;
+  top: 0%;
+}
+
+.ticket-parent .container-items .ticket-cover .container .container-bottom img {
+  float: left;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.ticket-parent
+  .container-items
+  .ticket-cover
+  .container
+  .container-bottom
+  .ticket-name {
+  color: var(--light-color);
+  text-align: left;
+  font-weight: 600;
+  margin-left: 18px;
+}
+
+.ticket-parent
+  .container-items
+  .ticket-cover
+  .container
+  .container-bottom
+  .username-github
+  .github-name- {
+  color: var(--muted-color);
+  text-align: left;
+}
+
+.ticket-parent
+  .container-items
+  .ticket-cover
+  .container
+  .container-top
+  .containers-- {
+  padding: 25px 20px;
+}
+
+.ticket-parent
+  .container-items
+  .ticket-cover
+  .container
+  .container-bottom
+  .containers-- {
+  padding: 25px 20px;
+}
+
+.ticket-parent
+  .container-items
+  .ticket-cover
+  .container
+  .container-top
+  .containers--
+  img {
+  display: flex;
+  justify-self: left;
+}
+
+.ticket-parent
+  .container-items
+  .ticket-cover
+  .container
+  .container-top
+  .containers--
+  .ticket-date {
+  text-align: left;
+  margin-left: 50px;
+  color: var(--muted-color);
+}
+
+.ticket-parent .container-items .ticket-cover .right-container {
+  width: 19%;
+  height: 100%;
+  float: left;
+}
+
+.ticket-parent
+  .container-items
+  .ticket-cover
+  .right-container
+  .container--items {
+  padding-top: 55px;
+}
+
+.ticket-parent .container-items .ticket-cover .right-container h3 {
+  rotate: 90deg;
+  font-size: xx-large;
+  color: var(--muted-color);
+}
+
+.ticket-parent .container-items .ticket-cover .ticket-img {
+  width: 100%;
+}
+
+.ticket-parent .container-items .ticket-cover .container-details {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------------------------------------------------------------------- */
+
 /* Media screen */
 
 @media only screen and (max-width: 768px) {
-  .container-form {
+  .container-form,
+  .ticket-parent {
     background-image: url("../images/background-tablet.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
+  }
+
+  .ticket-parent {
+    height: 100vh;
+  }
+
+  .container-form,
+  .ticket-parent .container-items {
+    padding-top: 8%;
+  }
+
+  .ticket-parent .container-items {
+    padding-bottom: 10%;
   }
 
   .container-form .container-main-text article {
@@ -340,10 +534,31 @@ body {
   .container-form .top-container {
     margin-bottom: 4%;
   }
+
+  /* ----------------------- */
+
+  .ticket-parent .container-items .ticket-cover {
+    margin-top: 8%;
+    position: relative;
+    width: 100%;
+  }
+
+  .ticket-parent .container-items .welcome-successful-users {
+    width: 100%;
+  }
+
+  .ticket-parent .container-items .welcome-successful-users .email-message {
+    width: 80%;
+  }
+
+  .ticket-parent .container-items .welcome-successful-users .article-welcome {
+    font-size: 40px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
-  .container-form {
+  .container-form,
+  .ticket-parent {
     background-image: url("../images/background-mobile.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -355,7 +570,8 @@ body {
     top: 0;
   }
 
-  .container-form .container-items {
+  .container-form,
+  .ticket-parent .container-items {
     padding-bottom: 30%;
   }
 
@@ -374,6 +590,53 @@ body {
 
   .container-form .container-main-text article h1 {
     font-size: 30px;
+  }
+
+  /* ticket */
+  .ticket-parent
+    .container-items
+    .ticket-cover
+    .right-container
+    .container--items {
+    padding-top: 20px;
+  }
+
+  .ticket-parent
+    .container-items
+    .ticket-cover
+    .container
+    .container-bottom
+    .avatar {
+    width: 50px;
+  }
+
+  .ticket-parent
+    .container-items
+    .ticket-cover
+    .container
+    .container-bottom
+    .github-name- {
+    margin-top: -5px;
+  }
+
+  .ticket-parent
+    .container-items
+    .ticket-cover
+    .container
+    .container-bottom
+    .ticket-name {
+    margin-top: -0px;
+  }
+
+  .ticket-parent
+    .container-items
+    .ticket-cover
+    .container
+    .container-bottom
+    .username-github
+    .github-name- {
+    display: flex;
+    justify-content: left;
   }
 }
 

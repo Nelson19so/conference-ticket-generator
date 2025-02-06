@@ -61,10 +61,10 @@ imageUpload.addEventListener("click", () => {
 });
 
 removeImg.addEventListener("click", () => {
-  displayImg.src = "./asset/images/icon-upload.svg";
+  displayImg.src = "./static/images/icon-upload.svg";
   displayBtnChanges.style.display = "none";
   imgDescr.style.display = "block";
-  buttonAction = true;
+  buttonAction = !buttonAction;
 });
 
 // form validation for input.
@@ -91,31 +91,39 @@ submitForm.addEventListener("submit", (e) => {
   const emailValue = email.value.trim();
   const githubValue = github.value.trim();
 
-  if (usernameValue == "" || usernameValue.length <= minLengh) {
+  if (!usernameValue || usernameValue.length <= minLengh) {
     usernameError.classList.add("username-error");
     usernameError.style.display = "block";
     username.style.border = "1px solid #f57261";
-  } else if (emailValue == "") {
+  } else {
+    username.style.border = "";
+    usernameError.style.display = "none";
+  }
+  if (!emailValue) {
     emailError.classList.add("email-error");
     emailError.style.display = "block";
     email.style.border = "1px solid #f57261";
-  } else if (githubValue === "") {
+  } else {
+    email.style.border = "";
+    emailError.style.display = "none";
+  }
+  if (!githubValue) {
     githubError.classList.add("github-error");
     githubError.style.display = "block";
-    github.style.border = "1px solid hsl(7, 88%, 67%)";
+    github.style.border = "1px solid #f57261";
   } else {
-    username.style.border = "";
-    email.style.border = "";
     github.style.border = "";
-    validetForminput = true;
-    usernameError.style.display = "none";
-    emailError.style.display = "none";
     githubError.style.display = "none";
-
+  }
+  if (usernameValue && email && github) {
+    validetForminput = true;
     if (validetFormImg) {
       if (validetForminput) {
         alert("ticket was successfully generated");
       }
+    } else {
+      imgError.textContent = "Please upload your avatar";
+      imgError.style.color = "#f57261";
     }
   }
 });
