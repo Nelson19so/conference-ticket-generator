@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-+4_ks=0di0-dkqvydrg9md+cs5lv8r8qg(xty^q@=$hnz*32s8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'conference-ticket-generator-toup.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    ]
 
 
 # Application definition
