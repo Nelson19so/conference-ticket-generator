@@ -23,10 +23,10 @@ avatarInput.addEventListener("change", (event) => {
 
     reader.addEventListener("load", (e) => {
       displayImg.src = e.target.result;
+      console.log(e.target.result);
     });
 
     reader.readAsDataURL(selectfile);
-    avatarInput.style.display = "none";
     imgDescr.style.display = "none";
     displayBtnChanges.style.display = "flex";
     displayBtnChanges.style.justifyContent = "center";
@@ -60,11 +60,12 @@ imageUpload.addEventListener("click", () => {
   avatarInput.click();
 });
 
-removeImg.addEventListener("click", () => {
+removeImg.addEventListener("click", (e) => {
   displayImg.src = "./static/images/icon-upload.svg";
   displayBtnChanges.style.display = "none";
   imgDescr.style.display = "block";
   buttonAction = !buttonAction;
+  e.stopPropagation();
 });
 
 // form validation for input.
@@ -76,6 +77,7 @@ const submitForm = document.getElementById("submit-form");
 const usernameError = document.getElementById("displayNone");
 const emailError = document.getElementById("displayNoneemail");
 const githubError = document.getElementById("displayNonegithub");
+const ticketId = document.getElementById("ticket_id");
 
 const minLengh = 4;
 const displayError = false;
@@ -85,8 +87,6 @@ emailError.style.display = "none";
 githubError.style.display = "none";
 
 submitForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
   const usernameValue = username.value.trim();
   const emailValue = email.value.trim();
   const githubValue = github.value.trim();
@@ -95,6 +95,7 @@ submitForm.addEventListener("submit", (e) => {
     usernameError.classList.add("username-error");
     usernameError.style.display = "block";
     username.style.border = "1px solid #f57261";
+    e.preventDefault();
   } else {
     username.style.border = "";
     usernameError.style.display = "none";
@@ -103,6 +104,7 @@ submitForm.addEventListener("submit", (e) => {
     emailError.classList.add("email-error");
     emailError.style.display = "block";
     email.style.border = "1px solid #f57261";
+    e.preventDefault();
   } else {
     email.style.border = "";
     emailError.style.display = "none";
@@ -111,6 +113,7 @@ submitForm.addEventListener("submit", (e) => {
     githubError.classList.add("github-error");
     githubError.style.display = "block";
     github.style.border = "1px solid #f57261";
+    e.preventDefault();
   } else {
     github.style.border = "";
     githubError.style.display = "none";
@@ -119,13 +122,22 @@ submitForm.addEventListener("submit", (e) => {
     validetForminput = true;
     if (validetFormImg) {
       if (validetForminput) {
-        alert("ticket was successfully generated");
+        return;
       }
     } else {
       imgError.textContent = "Please upload your avatar";
       imgError.style.color = "#f57261";
+      e.preventDefault();
     }
   }
 });
+
+function ticketIds(length) {
+  let uid = Math.floor(Math.random() * length) + 1;
+  return uid;
+}
+
+let randoNumber = ticketIds(parseInt(9999));
+ticketId.value = randoNumber;
 
 // ---------------------------------

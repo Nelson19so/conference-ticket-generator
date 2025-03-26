@@ -30,6 +30,12 @@ body {
   font-family: "Regular";
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 /* ------------------------------------------------------------------- */
 
 /* Form styling */
@@ -244,13 +250,14 @@ body {
 }
 
 .container-input-form input {
-  width: 91%;
+  width: 100%;
   background-color: hsl(245, 19%, 35%, 0.2);
   border: 1px solid var(--muted-color);
   padding: 12px 17px;
   color: var(--muted-color);
   border-radius: 10px;
   transition: 0.6s;
+  box-sizing: border-box;
 }
 
 .container-input-form input:hover {
@@ -284,7 +291,8 @@ body {
 
 .container-input-form .username-error img,
 .email-error img,
-.github-error img {
+.github-error img,
+.info- {
   float: left;
   margin-right: 5px;
 }
@@ -405,6 +413,7 @@ body {
   .github-name- {
   color: var(--muted-color);
   text-align: left;
+  text-overflow: ellipsis;
 }
 
 .ticket-parent
@@ -479,6 +488,10 @@ body {
   height: 100%;
 }
 
+#useravatar {
+  min-height: 75px;
+}
+
 /* ---------------------------------------------------------------------- */
 
 /* Media screen */
@@ -511,7 +524,7 @@ body {
   }
 
   .container-form .container-form- .container- {
-    width: 300px;
+    width: 350px;
   }
 
   .position-abs-bottom-mb-tb {
@@ -522,6 +535,14 @@ body {
     width: 70%;
   }
 
+  .pattern-lines {
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top: -290px;
+  }
+
   .position-abs-bottom {
     display: none;
   }
@@ -529,6 +550,7 @@ body {
   .position-abs- {
     width: 60%;
     top: 0;
+    margin-top: -30px;
   }
 
   .container-form .top-container {
@@ -554,6 +576,12 @@ body {
   .ticket-parent .container-items .welcome-successful-users .article-welcome {
     font-size: 40px;
   }
+
+  /* ticket */
+  #useravatar {
+    min-height: 45px;
+    border-radius: 10px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -572,7 +600,7 @@ body {
 
   .container-form,
   .ticket-parent .container-items {
-    padding-bottom: 30%;
+    padding-bottom: 20%;
   }
 
   .container-form .container-main-text article {
@@ -581,7 +609,7 @@ body {
   }
 
   .container-form .container-form- .container- {
-    width: 320px;
+    width: 350px;
   }
 
   .container-form .container-form- .container- form .img-info {
